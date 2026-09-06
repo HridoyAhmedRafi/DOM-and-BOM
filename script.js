@@ -25,6 +25,7 @@ img.setAttribute(
 console.log(img.hasAttribute("alt"));
 img.alt = "this is image";
 img.style.height = "500px";
+img.style.width = "700px";
 
 const paragaph = document.querySelector(".paragaph");
 console.log(paragaph);
@@ -34,3 +35,28 @@ console.log(submit);
 
 const allInput = document.querySelectorAll("input");
 console.log(allInput);
+
+//
+const alertBtn = document.getElementById("img-btn");
+alertBtn.addEventListener("click", () => {
+  img.src =
+    "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D";
+});
+
+const myInput = document.getElementById("my-input");
+myInput.addEventListener("keypress", (even) => {
+  // console.log(myInput.value);
+  // console.log(even.target);
+  console.log(even.type);
+});
+
+console.log(document);
+console.log(window);
+console.log(location);
+console.log(location.href);
+console.log(history);
+
+const Reload = document.getElementById("Reload");
+Reload.addEventListener("click", () => {
+  location.reload();
+});
