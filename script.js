@@ -44,10 +44,14 @@ alertBtn.addEventListener("click", () => {
 });
 
 const myInput = document.getElementById("my-input");
-myInput.addEventListener("keypress", (even) => {
+myInput.addEventListener("keypress", (event) => {
   // console.log(myInput.value);
-  // console.log(even.target);
-  console.log(even.type);
+  // console.log(event.target);
+  console.log(event.type);
+  const inputValue = event.target.value;
+  localStorage.setItem("inputValue", inputValue);
+  const msg = document.getElementById("msg");
+  msg.innerText = localStorage.getItem(`inputValue`);
 });
 
 console.log(document);
@@ -60,3 +64,16 @@ const Reload = document.getElementById("Reload");
 Reload.addEventListener("click", () => {
   location.reload();
 });
+
+// set data in browser local storage
+localStorage.setItem("name", "Hridoy");
+localStorage.setItem("age", 20);
+
+const getName = localStorage.getItem("name");
+const getAge = localStorage.getItem("age");
+
+const myName = document.getElementById("nameData");
+const myAge = document.getElementById("ageData");
+
+myName.innerText = `Name : ${getName}`;
+myAge.innerText = `Age : ${getAge}`;
